@@ -1,0 +1,76 @@
+{% load static %}
+ <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+      <div class="container">
+        <a class="navbar-brand" href="{% url 'index' %}">A Comparitive Analysis for <br>Credit Card Using Supervised Learning</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="oi oi-menu"></span> Menu
+        </button>
+
+        <div class="collapse navbar-collapse" id="ftco-nav">
+          <ul class="navbar-nav ml-auto">
+            <li
+              {% if '/' == request.path %}
+                class="nav-item active mr-3"
+              {% else %}
+                class="nav-item mr-3"
+              {% endif %}
+            ><a href="{% url 'index' %}" class="nav-link">Home</a>
+            </li>
+           <li
+              {% if 'about' in request.path %}
+                class="nav-item active mr-3"
+              {% else %}
+                class="nav-item mr-3"
+              {% endif %}
+            ><a href="{% url 'about' %}" class="nav-link">About</a></li>
+            <li
+              {% if 'solutions' in request.path %}
+                class="nav-item active mr-3"
+              {% else %}
+                class="nav-item mr-3"
+              {% endif %}
+            ><a href="{% url 'solutions' %}" class="nav-link">Solution</a></li>
+            {% if user.is_authenticated %}
+              {% ifequal user.groups.all.0.name 'Banker'%}
+                <li
+                  {% if 'manage' in request.path %}
+                    class="nav-item active mr-3"
+                  {% else %}
+                    class="nav-item mr-3"
+                  {% endif %}
+                ><a href="{% url 'manage' %}" class="nav-link">Manage</a></li>
+              {% endifequal %}
+              {% ifequal user.groups.all.0.name 'Customer' %}
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="room.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Bank Services</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown04">
+                      <a class="dropdown-item" href="{% url 'account' %}">Account</a>
+                      <a class="dropdown-item" href="{% url 'profile' %}">My Profile</a>
+                    </div>
+                </li>
+              {% endifequal %}
+            {% endif %}
+          {% if user.is_authenticated %}
+              <li class="nav-item mr-3">
+                  <a href="javascript:{document.getElementById('logout').submit()}" class="nav-link">
+                    <i class="fas fa-sign-out-alt"></i> Logout ({{ user.username }})
+                  </a>
+                  <form id="logout" action="{% url 'logout' %}" method="POST">
+                    {% csrf_token %}
+                    <input type="hidden">
+                  </form>
+                </li>
+           {% else %}
+            <li
+              {% if 'login' in request.path %}
+                class="nav-item active mr-3"
+              {% else %}
+                class="nav-item mr-3"
+              {% endif %}
+            ><a href="{% url 'login' %}" class="nav-link">Login</a></li>
+           {% endif %}
+
+          </ul>
+        </div>
+      </div>
+    </nav>

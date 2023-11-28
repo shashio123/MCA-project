@@ -1,0 +1,228 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+  <section class="home-slider owl-carousel ftco-degree-bg">
+      <div class="slider-item bread-wrap" style="background-image: url('static/images/bg_1.jpg');" data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="container">
+          <div class="row slider-text justify-content-center align-items-center">
+            <div class="col-md-10 col-sm-12 ftco-animate mb-4 text-center">
+              <p class="breadcrumbs"><span class="mr-2"><a href="{% url 'index' %}">Home</a></span> <span>Customer Details</span></p>
+                <a href="#footprints" ><h1 class="mb-3 bread">Edit Customer Details</h1></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-light py-5" id="footprints">
+        <div class="container">
+            <form action="{% url 'footprint' profileid %}" method="POST" class="border border-light p-5">
+                {% csrf_token %}
+                <div class="row">
+                    <label>Account Balance:  </label>
+                    <div class="col-md-4 form-group">
+                        <input type="digit" name="account_balance" value="{{ footprints.account_balance }}" class="form-control mb-4" required>
+                    </div>
+                </div>
+                <b>Payment status:</b><hr>
+                <div class="row">
+                    1st loan payment:<div class="col-md-4 form-group">
+                        <select name="pay_0" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                          <option value="1">Before Time</option>
+                          <option value="2">On time</option>
+                          <option value="0">1 month later</option>
+                          <option value="-2">2 month later</option>
+                          <option value="-3">3 month later</option>
+                          <option value="-4">4 month later</option>
+                          <option value="-5">5 month later</option>
+                          <option value="-6">6 month later</option>
+                          <option value="-7">7 month later</option>
+                          <option value="-8">8 month later</option>
+                        </select>
+                    </div>
+                    2nd loan payment:<div class="col-md-4 form-group">
+                        <select name="pay_1" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                          <option value="1">Before Time</option>
+                          <option value="0">On time</option>
+                          <option value="-1">1 month later</option>
+                          <option value="-2">2 month later</option>
+                          <option value="-3">3 month later</option>
+                          <option value="-4">4 month later</option>
+                          <option value="-5">5 month later</option>
+                          <option value="-6">6 month later</option>
+                          <option value="-7">7 month later</option>
+                          <option value="-8">8 month later</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    3rd loan payment:<div class="col-md-4 form-group">
+                        <select name="pay_2" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                          <option value="2">Before Time</option>
+                          <option value="1">On time</option>
+                          <option value="0">1 month later</option>
+                          <option value="-1">2 month later</option>
+                          <option value="-3">3 month later</option>
+                          <option value="-4">4 month later</option>
+                          <option value="-5">5 month later</option>
+                          <option value="-6">6 month later</option>
+                          <option value="-7">7 month later</option>
+                          <option value="-8">8 month later</option>
+                        </select>
+                    </div>
+                    4th loan payment:<div class="col-md-4 form-group">
+                        <select name="pay_3" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                          <option value="2">Before Time</option>
+                          <option value="1">On time</option>
+                          <option value="0">1 month later</option>
+                          <option value="-2">2 month later</option>
+                          <option value="-3">3 month later</option>
+                          <option value="-4">4 month later</option>
+                          <option value="-5">5 month later</option>
+                          <option value="-6">6 month later</option>
+                          <option value="-7">7 month later</option>
+                          <option value="-8">8 month later</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    5th loan payment:<div class="col-md-4 form-group">
+                        <select name="pay_4" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                          <option value="1">Before Time</option>
+                          <option value="2">On time</option>
+                          <option value="0">1 month later</option>
+                          <option value="-2">2 month later</option>
+                          <option value="-3">3 month later</option>
+                          <option value="-4">4 month later</option>
+                          <option value="-5">5 month later</option>
+                          <option value="-6">6 month later</option>
+                          <option value="-7">7 month later</option>
+                          <option value="-8">8 month later</option>
+                        </select>
+                    </div>
+                    6th loan payment:<div class="col-md-4 form-group">
+                        <select name="pay_5" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                          <option value="2" selected>Before Time</option>
+                          <option value="1">On time</option>
+                          <option value="0">1 month later</option>
+                          <option value="-2">2 month later</option>
+                          <option value="-3">3 month later</option>
+                          <option value="-4">4 month later</option>
+                          <option value="-5">5 month later</option>
+                          <option value="-6">6 month later</option>
+                          <option value="-7">7 month later</option>
+                          <option value="-8">8 month later</option>
+                        </select>
+                    </div>
+                </div>
+                <br>
+                <b>Bill amounts:</b><b style="margin-left:340px">Paid Amount:</b><hr>
+                <div class="row">
+                    <div class="input-group mb-3 col-md-5">
+                        <div class="col-md-6"><p style="font-size:10px">1st Loan Amount:&nbsp</p></div>
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">$</span>
+                      </div>
+                      <input type="text" value="{{ footprints.bill_amt1 }}" class="form-control" name="bill_amt1" aria-label="Amount (to the nearest dollar)">
+                    </div>
+                    <div class="input-group mb-3 col-md-5">
+                        <div class="col-md-6"><p style="font-size:10px">1st Paid Loan Amount:&nbsp</p></div>
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">$</span>
+                      </div>
+                      <input type="text" value="{{ footprints.pay_amt1 }}" class="form-control" name="pay_amt1"  aria-label="Amount (to the nearest dollar)">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-group mb-3 col-md-5">
+                        <div class="col-md-6"><p style="font-size:10px">2nd Loan Amount:&nbsp</p></div>
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">$</span>
+                      </div>
+                      <input type="text" value="{{ footprints.bill_amt2 }}" class="form-control" name="bill_amt2" aria-label="Amount (to the nearest dollar)">
+                    </div>
+                    <div class="input-group mb-3 col-md-5">
+                        <div class="col-md-6"><p style="font-size:10px">2nd Paid Loan Amount:&nbsp</p></div>
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">$</span>
+                      </div>
+                      <input type="text" value="{{ footprints.pay_amt2 }}" class="form-control" name="pay_amt2"  aria-label="Amount (to the nearest dollar)">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-group mb-3 col-md-5">
+                        <div class="col-md-6"><p style="font-size:10px">3rd Loan Amount:&nbsp</p></div>
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">$</span>
+                      </div>
+                      <input type="text" value="{{ footprints.bill_amt3 }}" class="form-control" name="bill_amt3"  aria-label="Amount (to the nearest dollar)">
+                    </div>
+                    <div class="input-group mb-3 col-md-5">
+                        <div class="col-md-6"><p style="font-size:10px">3rd Paid Loan Amount:&nbsp</p></div>
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">$</span>
+                      </div>
+                      <input type="text" value="{{ footprints.pay_amt3 }}" class="form-control" name="pay_amt3"  aria-label="Amount (to the nearest dollar)">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-group mb-3 col-md-5">
+                        <div class="col-md-6"><p style="font-size:10px">4th Loan Amount:&nbsp</p></div>
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">$</span>
+                      </div>
+                      <input type="text" value="{{ footprints.bill_amt4 }}" class="form-control" name="bill_amt4"  aria-label="Amount (to the nearest dollar)">
+                    </div>
+                    <div class="input-group mb-3 col-md-5">
+                        <div class="col-md-6"><p style="font-size:10px">4th Paid Loan Amount:&nbsp</p></div>
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">$</span>
+                      </div>
+                      <input type="text" value="{{ footprints.pay_amt4 }}" class="form-control" name="pay_amt4"  aria-label="Amount (to the nearest dollar)">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-group mb-3 col-md-5">
+                        <div class="col-md-6"><p style="font-size:10px">5th Loan Amount:&nbsp</p></div>
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">$</span>
+                      </div>
+                      <input type="text" value="{{ footprints.bill_amt5 }}" class="form-control" name="bill_amt5"  aria-label="Amount (to the nearest dollar)">
+                    </div>
+                    <div class="input-group mb-3 col-md-5">
+                        <div class="col-md-6"><p style="font-size:10px">5th Paid Loan Amount:&nbsp</p></div>
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">$</span>
+                      </div>
+                      <input type="text" value="{{ footprints.pay_amt5 }}" class="form-control" name="pay_amt5"  aria-label="Amount (to the nearest dollar)">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-group mb-3 col-md-5">
+                        <div class="col-md-6"><p style="font-size:10px">6th Loan Amount:&nbsp</p></div>
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">$</span>
+                      </div>
+                      <input type="text" value="{{ footprints.bill_amt6 }}" class="form-control" name="bill_amt6"  aria-label="Amount (to the nearest dollar)">
+                    </div>
+                    <div class="input-group mb-3 col-md-5">
+                        <div class="col-md-6"><p style="font-size:10px">6th Paid Loan Amount:&nbsp</p></div>
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">$</span>
+                      </div>
+                      <input type="text" value="{{ footprints.pay_amt6 }}" class="form-control" name="pay_amt6"  aria-label="Amount (to the nearest dollar)">
+                    </div>
+                </div>
+                <hr>
+                <div class="container col-mad-4">
+                    <input type="submit" class="btn btn-outline-primary btn-block">
+                </div>
+            </form>
+        </div>
+    </section>
+
+{% endblock %}

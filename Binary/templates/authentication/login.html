@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{%load static %}
+
+{% block content %}
+
+<section class="home-slider owl-carousel ftco-degree-bg">
+      <div class="slider-item bread-wrap" style="background-image: url('static/images/bg_1.jpg');" data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="container">
+          <div class="row slider-text justify-content-center align-items-center">
+            <div class="col-md-10 col-sm-12 ftco-animate mb-4 text-center">
+              <p class="breadcrumbs"><span class="mr-2"><a href="{% url 'index' %}">Home</a></span> <span>Login</span></p>
+                <a href="#login" ><h1 class="mb-3 bread">Login</h1></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<section id="login" class="bg-light py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 mx-auto">
+                <!-- Default form login -->
+          <form class="text-center border border-light p-5" action="{% url 'login' %}" method="POST">
+                {% csrf_token %}
+              <p class="h4 mb-4">Sign in</p>
+                 <!-- Alerts -->
+                    {% include 'partials/_alerts.html' %}
+              <!-- Email -->
+              <input type="username" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="Username" name="username" required>
+
+              <!-- Password -->
+              <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" name="password" placeholder="Password" required>
+
+              <div class="d-flex justify-content-around">
+                  <div>
+                      <!-- Remember me -->
+                      <div class="custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="defaultLoginFormRemember">
+                          <label class="custom-control-label" for="defaultLoginFormRemember">Remember me</label>
+                      </div>
+                  </div>
+                  <div>
+                      <!-- Forgot password -->
+                      <a href="">Forgot password?</a>
+                  </div>
+              </div>
+
+              <!-- Sign in button -->
+              <button class="btn btn-info btn-block my-4" type="submit">Sign in</button>
+
+              <!-- Register -->
+              <p>Not a member?
+                  <a href="{% url 'register' %}">Register</a>
+              </p>
+          </form>
+          <!-- Default form login -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}

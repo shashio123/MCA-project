@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{%load static %}
+
+{% block content %}
+
+<section class="home-slider owl-carousel ftco-degree-bg">
+      <div class="slider-item bread-wrap" style="background-image: url('static/images/bg_1.jpg');" data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="container">
+          <div class="row slider-text justify-content-center align-items-center">
+            <div class="col-md-10 col-sm-12 ftco-animate mb-4 text-center">
+              <p class="breadcrumbs"><span class="mr-2"><a href="{% url 'index' %}">Home</a></span> <span>Register</span></p>
+              <a href="#register"><h1 class="mb-3 bread">Register Account</h1></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<section id="register" class="bg-light py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 mx-auto">
+                <!-- Default form login -->
+          <form class="text-center border border-light p-5" action="{% url 'register' %}" method="POST">
+                {% csrf_token %}
+              <p class="h4 mb-4">Sign Up</p>
+                     <!-- Alerts -->
+                    {% include 'partials/_alerts.html' %}
+                  <div class="form-group">
+                      <input type="text" name="first_name" class="form-control" placeholder="First Name" required>
+                    </div>
+                    <div class="form-group">
+                      <input type="text" name="last_name" class="form-control" placeholder="Last Name" required>
+                    </div>
+                    <div class="form-group">
+                      <input type="text" name="username" class="form-control" placeholder="Username" required>
+                    </div>
+                    <div class="form-group">
+                      <input type="email" name="email" class="form-control" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                      <input type="password" name="password" class="form-control" placeholder="Password" required>
+                    </div>
+                    <div class="form-group">
+                      <input type="password" name="password2" class="form-control" placeholder="Confirm Password" required>
+                    </div>
+                    <div class="form-group">
+                        <select id = "Group" name="groupName" class="form-control" required>
+                            <option selected="true" disabled="disabled" value="">Group (All)</option>
+                           <option value = "Banker">Bank Employee</option>
+                           <option value = "Customer">Customer</option>
+                         </select>
+                    </div>
+              <!-- Sign in button -->
+              <button class="btn btn-info btn-block my-4" type="submit">Sign Up</button>
+          </form>
+          <!-- Default form login -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}

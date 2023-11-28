@@ -1,0 +1,211 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+ <section class="home-slider owl-carousel ftco-degree-bg">
+      <div class="slider-item" style="background-image: url('static/images/bg_1.jpg');" data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="container">
+          <div class="row slider-text align-items-center justify-content-center">
+            <div class="col-md-10 ftco-animate text-center">
+              <h1 class="mb-4">We Are There To
+                <strong class="typewrite" data-period="4000" data-type='[ "Help.", "Serve.", "Protect.", "Provide." ]'>
+                  <span class="wrap"></span>
+                </strong>
+              </h1>
+              <p>Help our clients to MAke Automation using our Machine Learning Algorithms .</p>
+                 </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END slider -->
+ <!-- Alerts -->
+{% include 'partials/_alerts.html' %}
+
+    <section class="ftco-section-featured ftco-animate">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="carousel owl-carousel">
+              <div class="item">
+                <a href="portfolio.html">
+                  <img src="{% static 'images/dashboard_full_1.jpg' %}" class="img-fluid" alt="">
+                </a>
+              </div>
+              <div class="item">
+                <a href="portfolio.html">
+                  <img src="{% static 'images/dashboard_full_2.jpg' %}" class="img-fluid" alt="">
+                </a>
+              </div>
+              <div class="item">
+                <a href="portfolio.html">
+                  <img src="{% static 'images/dashboard_full_3.jpg' %}" class="img-fluid" alt="">
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="ftco-section ftco-degree-bg">
+      <div class="container">
+        <div class="row justify-content-center mb-5 pb-5">
+          <div class="col-md-7 text-center heading-section ftco-animate">
+            <span class="subheading">Our Services</span>
+            <h2>We are Using Supervised Learnig for /better Prediction!</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 col-lg-3 d-flex align-self-stretch ftco-animate">
+            <div class="media block-6 services d-block text-center">
+              <div class="d-flex justify-content-center"><div class="icon color-1 d-flex justify-content-center mb-3"><span class="align-self-center icon-layers"></span></div></div>
+              <div class="media-body p-2">
+                <h3 class="heading">Unlimited Features</h3>
+                <p></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 d-flex align-self-stretch ftco-animate">
+            <div class="media block-6 services d-block text-center">
+              <div class="d-flex justify-content-center"><div class="icon color-2 d-flex justify-content-center mb-3"><span class="align-self-center icon-gears"></span></div></div>
+              <div class="media-body p-2">
+                <h3 class="heading">Multiple Functions</h3>
+                <p></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 d-flex align-self-stretch ftco-animate">
+            <div class="media block-6 services d-block text-center">
+              <div class="d-flex justify-content-center"><div class="icon color-3 d-flex justify-content-center mb-3"><span class="align-self-center icon-paper-plane"></span></div></div>
+              <div class="media-body p-2">
+                <h3 class="heading">Advanced Visualizations</h3>
+                <p></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-self-stretch ftco-animate">
+            <div class="media block-6 services d-block text-center">
+              <div class="d-flex justify-content-center"><div class="icon color-4 d-flex justify-content-center mb-3"><span class="align-self-center icon-live_help"></span></div></div>
+              <div class="media-body p-2">
+                <h3 class="heading">Community &amp; Supports</h3>
+                <p></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ftco-section-parallax ftco-degree-bg">
+      <div class="parallax-img d-flex align-items-center">
+        <div class="container">
+          <div class="row d-flex justify-content-center">
+            <div class="col-md-10 text-center heading-section heading-section-white ftco-animate">
+              <h2 class="h1 font-weight-bold">Turn every channel into a revenue channel and drive business growth</h2>
+              <p><a href="#" class="btn btn-primary btn-outline-white mt-3 py-3 px-4">View more details</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ftco-section">
+      <div class="container-fluid">
+        <div class="row no-gutters justify-content-center mb-5 pb-5">
+          <div class="col-md-7 text-center heading-section ftco-animate">
+            <span class="subheading">Works</span>
+            <h2>Recent Works</h2>
+          </div>
+        </div>
+        <div class="row no-gutters">
+          <div class="block-3 d-md-flex ftco-animate">
+            <a href="portfolio.html" class="image" style="background-image: url('static/images/work-1.jpg'); "></a>
+            <div class="text">
+              <h4 class="subheading">Illustration</h4>
+              <h2 class="heading"><a href="portfolio.html">Even the all-powerful Pointing has no control</a></h2>
+              <p> the study on fraud detection is interesting and important. Extracting the cardholder's historical transaction patterns is an important way of detecting fraud. In this paper we proposes a new credit card fraud detection system (FDS) based on behavior certificate (BC) which reflects cardholders' transaction habits.</p>
+            </div>
+          </div>
+          <div class="block-3 d-md-flex ftco-animate">
+            <a href="portfolio.html" class="image order-2" style="background-image: url('static/images/work-2.jpg'); "></a>
+            <div class="text order-1">
+              <h4 class="subheading">Application</h4>
+              <h2 class="heading"><a href="portfolio.html">Credit card frauds costs consumers several billions of dollars annually.</a></h2>
+              <p> Even with several systems in place accurate fraud detections remains unsolved, due to several intrinsic issues contained in transaction data. This paper analyzes the intrinsic nature of data and proposes a risk based ensemble model RBE as a solution to handle the intrinsic issues contained in data and also to provide effective results.</p>
+            </div>
+          </div>
+          <div class="block-3 d-md-flex ftco-animate">
+            <a href="portfolio.html" class="image" style="background-image: url('static/images/work-3.jpg'); "></a>
+            <div class="text">
+              <h4 class="subheading">ML Cases</h4>
+              <h2 class="heading"><a href="portfolio.html">Even the all-powerful Pointing has no control</a></h2>
+              <p>Cost sensitive combiner replaces the conventional voting combiner to produce results that exhibits high performances and low cost. Comparisons with state-of-the-art models indicates the high performance levels of the proposed  model.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+    <section class="ftco-section ftco-degree-bg">
+      <div class="container">
+        <div class="row justify-content-center mb-5 pb-5">
+          <div class="col-md-7 text-center heading-section ftco-animate">
+            <span class="subheading">Blog</span>
+            <h2>Recent Blog</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 ftco-animate">
+            <div class="blog-entry">
+              <a href="blog-single.html" class="block-20" style="background-image: url('static/images/image_1.jpg');">
+              </a>
+              <div class="text p-4 d-block">
+                <div class="meta mb-3">
+                  <div><a href="#">July 12, 2018</a></div>
+                  <div><a href="#">Admin</a></div>
+                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
+                </div>
+                <h3 class="heading"><a href="#">Even with several systems in place accurate fraud detections remains unsolved.</a></h3>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 ftco-animate">
+            <div class="blog-entry" data-aos-delay="100">
+              <a href="blog-single.html" class="block-20" style="background-image: url('static/images/image_2.jpg');">
+              </a>
+              <div class="text p-4">
+                <div class="meta mb-3">
+                  <div><a href="#">July 12, 2018</a></div>
+                  <div><a href="#">Admin</a></div>
+                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
+                </div>
+                <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 ftco-animate">
+            <div class="blog-entry" data-aos-delay="200">
+              <a href="blog-single.html" class="block-20" style="background-image: url('static/images/image_3.jpg');">
+              </a>
+              <div class="text p-4">
+                <div class="meta mb-3">
+                  <div><a href="#">July 12, 2018</a></div>
+                  <div><a href="#">Admin</a></div>
+                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
+                </div>
+                <h3 class="heading"><a href="#">Bagging models are highly efficient in handling imbalanced data, while incorporation of risk</a></h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+{% endblock %}

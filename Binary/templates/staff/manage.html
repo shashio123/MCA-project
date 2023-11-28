@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+  <section class="home-slider owl-carousel ftco-degree-bg">
+      <div class="slider-item bread-wrap" style="background-image: url('static/images/bg_1.jpg');" data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="container">
+          <div class="row slider-text justify-content-center align-items-center">
+            <div class="col-md-10 col-sm-12 ftco-animate mb-4 text-center">
+              <p class="breadcrumbs"><span class="mr-2"><a href="{% url 'index' %}">Home</a></span> <span>Manage</span></p>
+                <a href="#manager" ><h1 class="mb-3 bread">Manage Customer Accounts</h1></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-light py-5" id="manager" style="margin-top:50px;">
+        <div class="container">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <td>User</td>
+                        <td>Account Number</td>
+                        <td>Potential Default Customer</td>
+                        <td>Updated on</td>
+                        <td>Edit Option</td>
+                    </tr>
+                    {% for user_profile in user_profiles %}
+                    <tr>
+                        <td>{{user_profile.user__username}}</td>
+                        <td>{{user_profile.account_number}}</td>
+                        <td>{{user_profile.creditscore__potential_defaulter}}</td>
+                        <td>{{user_profile.footprint__updated_at}}</td>
+                        <td><a href="{% url 'footprint' user_profile.id %}" class="btn btn-primary">Edit</a> </td>
+                    </tr>
+                    {% endfor %}
+                </thead>
+            </table>
+        </div>
+    </section>
+{% endblock %}

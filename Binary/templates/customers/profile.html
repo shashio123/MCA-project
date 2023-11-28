@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+    <section class="home-slider owl-carousel ftco-degree-bg">
+      <div class="slider-item bread-wrap" style="background-image: url('static/images/bg_1.jpg');" data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="container">
+          <div class="row slider-text justify-content-center align-items-center">
+            <div class="col-md-10 col-sm-12 ftco-animate mb-4 text-center">
+              <p class="breadcrumbs"><span class="mr-2"><a href="{% url 'index' %}">Home</a></span> <span>My Profile</span></p>
+                <a href="#profile" ><h1 class="mb-3 bread">Edit Your Profile</h1></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="profile" class="bg-light py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 mx-auto">
+                <!-- Default form login -->
+          <form class="text-center border border-light p-5" action="{% url 'profile' %}" method="POST">
+                {% csrf_token %}
+              <p class="h4 mb-4">Enter Personal Detail</p>
+                 <!-- Alerts -->
+                    {% include 'partials/_alerts.html' %}
+              <input type="digit" class="form-control mb-4" value="{{ profile.account_number }}" placeholder="Account Number" name="account_number" required>
+              <input type="text" class="form-control mb-4" value="{{ profile.ifsc_code }}" placeholder="IFSC Code" name="ifsc_code" required>
+              <input type="text" class="form-control mb-4" value="{{ profile.branch_name }}" placeholder="Branch Name" name="branch_name" required>
+              <input type="digit" class="form-control mb-4" value="{{ profile.age }}" placeholder="Age" name="age">
+              <input type="digit" class="form-control mb-4" value="{{ profile.No_of_Degrees }}" PLACEHOLDER="No of Degrees" name="no_of_degree">
+              <strong style="float : left">Sex:&nbsp&nbsp&nbsp&nbsp<input type="radio" class="mb-4" name="sex" value="2" checked>Male&nbsp&nbsp&nbsp&nbsp<input type="radio" class="mb-4" value="1" name="sex">Female </strong> <br>
+              <strong style="float : left; margin-bottom: 10px;">Marital Status:&nbsp&nbsp&nbsp&nbsp<input type="radio" class="mb-4" name="is_married" value="False" checked>Single &nbsp&nbsp&nbsp&nbsp<input type="radio" class="mb-4" name="is_married" value="False">Married</strong>
+
+              <!-- Sign in button -->
+              <br>
+              <button class="btn btn-info btn-block my-4" type="submit">Submit</button>
+
+          </form>
+          <!-- Default form login -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+{% endblock %}

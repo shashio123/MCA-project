@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+    <section class="home-slider owl-carousel ftco-degree-bg">
+      <div class="slider-item bread-wrap" style="background-image: url('static/images/bg_1.jpg');" data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="container">
+          <div class="row slider-text justify-content-center align-items-center">
+            <div class="col-md-10 col-sm-12 ftco-animate mb-4 text-center">
+              <p class="breadcrumbs"><span class="mr-2"><a href="{% url 'index' %}">Home</a></span> <span>Account</span></p>
+                <a href="#details" ><h1 class="mb-3 bread">Account Details</h1></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <section class="ftco-section" id="details">
+      <div class="container-fluid">
+        <div class="row no-gutters justify-content-center mb-5 pb-5">
+          <div class="col-md-7 text-center heading-section ftco-animate">
+            <span class="subheading">Account</span>
+            <h2>Account Details</h2>
+          </div>
+        </div>
+         <div class="row no-gutters">
+          <div class="block-3 d-md-flex ftco-animate col-md-12">
+            <a href="portfolio.html" class="image order-2" style="background-image: url('static/images/work-2.jpg'); "></a>
+            <div class="text order-1">
+              <h4 class="subheading">Details</h4>
+              <h2 class="heading"><a href="portfolio.html">Account Details</a></h2>
+              <p>You are a valuable customer to us. Here is all the account related details. Stay with us to enjoy a better way of banking. <br> Account Number:{{ account.account_number}} <br> IFSC code: {{ account.ifsc_code }}<br> Branch Name: {{ account.branch_name }}</p>
+            </div>
+          </div>
+      </div>
+      </div>
+  </section>
+
+<section class="ftco-section ftco-counter ftco-degree-bg" id="section-counter">
+      <div class="container">
+        <div class="row justify-content-center mb-5 pb-5">
+          <div class="col-md-7 text-center heading-section heading-section-white ftco-animate">
+            <h2>Account Details</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 col-lg-4 d-flex justify-content-center counter-wrap ftco-animate">
+            <div class="block-18 text-center">
+              <div class="text">
+                <strong class="number" data-number="{{ credit.score }}">0</strong>
+                <span>Credit Limit Of Your Account</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 d-flex justify-content-center counter-wrap ftco-animate" >
+            <div class="block-18 text-center">
+              <div class="text">
+                <strong class="number" data-number="{{ balance.account_balance }}">0</strong>
+                <span>Available Balance In Your Account</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 d-flex justify-content-center counter-wrap ftco-animate" style="margin-top: 19px; color: white; ">
+            <div class="block-18 text-center">
+              <div class="text">
+                  {% if credit.footprint_updated %}
+                    <strong style="color : white; margin-top: 25px; ">Not Updated</strong>
+                  {% else %}
+                  <strong>Updated</strong>
+                  {% endif %}
+                <span>Status Of Your Account Details</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+{% endblock %}
